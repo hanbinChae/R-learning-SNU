@@ -1,6 +1,6 @@
 ##### MLE by R / pg.22 #####
 library(stats4) # package which contains MLE: comes with base R (no installation needed)
-subway = read.table('subway.txt', header=TRUE, na = "-", fileEncoding = "CP949", encoding = "UTF-8")
+subway = read.table('data/subway.txt', header=TRUE, na = "-", fileEncoding = "CP949", encoding = "UTF-8")
 sub0607 = subway$use0607 # number of subway passengers from each DONG in Seoul (6-7am)
 hist(sub0607, breaks=seq(0,max(sub0607),max(sub0607)/20))
 
@@ -83,7 +83,7 @@ ks.test(DS1, DS2, alternative=c("less"))
 
 ##### Linear Regression by R / 28.pg #####
 rm(list=ls())
-concrete=read.table("concrete.txt", header=TRUE)
+concrete=read.table("data/concrete.txt", header=TRUE)
 
 str = concrete$Strength # Concrete strength
 cem = concrete$Cement # Cement amount
