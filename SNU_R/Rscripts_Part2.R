@@ -1,5 +1,5 @@
 ##### Import Data File & Create Histogram / pg.12 #####
-AddisonCreek = read.table("AddisonCreek.txt", header=TRUE) # header: read column names
+AddisonCreek = read.table("data/AddisonCreek.txt", header=TRUE) # header: read column names
 View(AddisonCreek)
 
 hist(AddisonCreek$FlowRate,freq=TRUE, main=expression(Flowrate(ft^3/sec)),breaks=c(seq(200,900,100),1200))
@@ -22,7 +22,7 @@ quantile(AddisonCreek$FlowRate, 0.05, type=2)
 
 quantile(AddisonCreek$FlowRate, type=2)
 IQR(AddisonCreek$FlowRate, type=2)
-boxplot(AddisonCreek$FlowRate)
+boxplot(AddisonCreek$FlowRate) #4분위수
 
 
 ##### Scatter Diagram & plot() / pg.15 #####
