@@ -1,13 +1,16 @@
 ##### "R... a powerful calculator" / pg.6 #####
+rm(list=ls())
+
 a = pi; a
 b <- 2.0; b
 c1 <- a; c1
-b -> c2; c2
+b -> c2; c2 # arrow sign
+
 sin(c1*c2)
 
-i = complex(real=0, imaginary=1)
-exp(i*pi) == cos(pi)+i*sin(pi)
-exp(i*pi) != cos(pi)+i*sin(pi)
+i = complex(real=0, imaginary=1);i # 복소수 생성(실수:0, 허수:1)
+exp(i*pi) == cos(pi)+i*sin(pi); # 오일러의 공식
+exp(i*pi) != cos(pi)+i*sin(pi);
 
 
 ##### Types of Data and Data Structures in R / pg.7 #####
@@ -15,10 +18,11 @@ x = 1.25 # numerical
 y = "Hello" # character
 z = x > 3 # logical
 
-
+typeof(x)
 ##### Data Type: Vector (1D Array) / pg.8 #####
 v1 = c(1.3, 2*pi, sqrt(2))
-v1[3]
+v1[1]
+typeof(v1)
 
 v2 = v1*2
 v3 = v1+3
@@ -46,23 +50,25 @@ matrix(1:12, ncol=3, byrow=TRUE) # row-wise
 
 m = 1:6
 dim(m) = c(2,3) # vector to 2x3 matrix
+m
 
-y = matrix(c(1,3:17),4,4) # 4x4 matrix with 1,3,?�?,17
+y = matrix(c(1,3:17),4,4) # 4x4 matrix with 1,3,???,17
+y
 y[2,3] # Element at 2nd row and 3rd column
 y[2,] # 2nd row
 y[,2] # 2nd column
 y[3] # 3rd element in column-wise sequence
-y[1:2, 3:4] # submatrix: 1st and 2nd rows + 3rd and 4th columns
+y[1:2, 3:4]; # submatrix: 1st and 2nd rows + 3rd and 4th columns
 
 ?quakes # '?' to get help regarding data, packages and functions
 dim(quakes) # check the dimension of the matrix
 View(quakes)
 summary(quakes) # summarize the data set
 head(quakes) # show the first few rows
-pairs(quakes, main = "Fiji Earthquakes, N = 1000", cex.main = 1.2, pch = "o") # Create a scatterplot matrices
+pairs(quakes, main = "Fiji Earthquakes, N = 1000", cex.main = 1.2, pch = "o"); # Create a scatterplot matrices
 
 
-##### Data Type: Data Frame / pg.10 #####
+ ##### Data Type: Data Frame / pg.10 #####
 cities = c("Berlin", "New York", "Paris", "Tokyo")
 area = c(892, 1214, 105, 2188)
 population = c(3.4, 8.1, 2.1, 12.9)
@@ -80,7 +86,7 @@ myframe[,2]
 myframe[,"Area"]
 
 ?CO2 
-dim(CO2) 
+dim(CO2)
 summary(CO2)
 View(CO2)
 plot(CO2[,"conc"],CO2[,"uptake"])

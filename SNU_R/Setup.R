@@ -1,2 +1,6 @@
+x = 1.23
+rm(x)
 print("Hello world!")
-1+2
+
+e = exp(1)
+print(e)
