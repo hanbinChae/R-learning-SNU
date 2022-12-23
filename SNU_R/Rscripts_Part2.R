@@ -32,7 +32,7 @@ height = AddisonCreek[,4]
 plot(flowrate, height, pch=20)
 
 # marker symbols and line types
-x = seq(0,2*pi, length.out=10)
+x = seq(0,2*pi, length.out=10) # 0, ~ 2pi
 y = sin(x)
 plot(x,y,pch=0,col="blue") # default: scatter plot (no lines, i.e. type="p")
 plot(x,y,pch=17,col="blue") # pch: select marker symbol
@@ -43,7 +43,7 @@ plot(x,y,pch=23,col="blue",bg="red",type="b",lty=2) # type = "b": both markers a
 
 
 ##### Numerical Descriptors / pg.16 #####
-AddisonCreek = read.table("AddisonCreek.txt", header=TRUE)
+AddisonCreek = read.table("data/AddisonCreek.txt", header=TRUE)
 FR = AddisonCreek$FlowRate
 HT = AddisonCreek$Height
 
@@ -64,8 +64,8 @@ cor(FR,HT) # S. Correlation Coeff.
 
 
 ##### d/p/q/r + shortname / pg.18 #####
-dnorm(0, mean=2, sd=1) # PDF of normal
-pnorm(0, mean=2, sd=1) # CDF of normal
+dnorm(2, mean=2, sd=1) # PDF of normal
+pnorm(2, mean=2, sd=1) # CDF of normal
 qnorm(0.5, mean=2, sd=1) # quantile at 0.5
 
 x=seq(-3,7,0.1)
@@ -79,5 +79,5 @@ hist(xn,freq=FALSE,breaks=seq(-3,7,0.1),col=rgb(1,0.6,0.3),ylim=c(0,0.6))cov = s
 zeta = sqrt(log(1+cov^2))
 lambda = log(mu)-0.5*zeta^2
 xl = rlnorm(100000, meanlog = lambda, sdlog = zeta)
-hist(xl,freq=FALSE,breaks=seq(0,15,0.1),col=rgb(0.3,0.6,1,0.5),add=T)
+hist(xl,freq=FALSE,breaks=seq(0,30,0.1),col=rgb(0.3,0.6,1,0.5),add=T)
 
